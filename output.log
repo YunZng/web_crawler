@@ -1,0 +1,96 @@
+DEBUG:visited:https://www.cs.jhu.edu/~yarowsky/cs466.html
+DEBUG:visited:https://www.cs.jhu.edu/~yarowsky/
+DEBUG:visited:https://www.cs.jhu.edu/~yarowsky/466.officehours.html
+DEBUG:visited:https://www.cs.jhu.edu/~yarowsky/cs466slides/
+DEBUG:visited:http://www.cs.jhu.edu
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/sigdat.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/pubs.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/cs466.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/cs415.html
+DEBUG:visited:https://www.cs.jhu.edu/~yarowsky/cs466slides/4slides/http.example/basic.example
+DEBUG:visited:https://www.cs.jhu.edu/~yarowsky/cs466slides/4slides/http.example/redirect.example
+DEBUG:visited:https://www.cs.jhu.edu/it-support/
+DEBUG:extracted:('https://www.cs.jhu.edu/it-support/', 'PHONE', '410-516-6281')
+DEBUG:extracted:('https://www.cs.jhu.edu/it-support/', 'PHONE', '410-516-6259')
+DEBUG:extracted:('https://www.cs.jhu.edu/it-support/', 'PHONE', '410-516-5249')
+DEBUG:extracted:('https://www.cs.jhu.edu/it-support/', 'PHONE', '410-516-4898')
+DEBUG:visited:https://www.cs.jhu.edu/search/
+DEBUG:visited:https://www.cs.jhu.edu/current-undergraduate-students/
+DEBUG:extracted:('https://www.cs.jhu.edu/current-undergraduate-students/', 'PHONE', '410-516-4117')
+DEBUG:extracted:('https://www.cs.jhu.edu/current-undergraduate-students/', 'PHONE', '410-516-8001')
+DEBUG:extracted:('https://www.cs.jhu.edu/current-undergraduate-students/', 'PHONE', '410-516-7777')
+DEBUG:visited:https://www.cs.jhu.edu/current-graduate-students/
+DEBUG:extracted:('https://www.cs.jhu.edu/current-graduate-students/', 'PHONE', '410-516-7451')
+DEBUG:extracted:('https://www.cs.jhu.edu/current-graduate-students/', 'PHONE', '410-516-4117')
+DEBUG:extracted:('https://www.cs.jhu.edu/current-graduate-students/', 'PHONE', '410-516-7777')
+DEBUG:visited:https://www.cs.jhu.edu/about/
+DEBUG:visited:https://www.cs.jhu.edu/about/message-from-dept-head/
+DEBUG:visited:https://www.cs.jhu.edu/about/diversity-and-inclusion/
+DEBUG:visited:https://www.cs.jhu.edu/about/employment-opportunities/
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/undergraduate-studies/
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/graduate-studies/
+DEBUG:extracted:('https://www.cs.jhu.edu/academic-programs/graduate-studies/', 'PHONE', '410-516-7451')
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/combined-bachelors-masters/
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/program-enrollment-and-outcomes/
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/academic-integrity-code/
+DEBUG:visited:https://www.cs.jhu.edu/research/
+DEBUG:visited:https://www.cs.jhu.edu/research/theory-programming-languages/
+DEBUG:visited:https://www.cs.jhu.edu/research/systems/
+DEBUG:visited:https://www.cs.jhu.edu/research/computational-biology-medicine/
+DEBUG:visited:https://www.cs.jhu.edu/research/information-security/
+DEBUG:visited:https://www.cs.jhu.edu/research/language-speech-processing/
+DEBUG:visited:https://www.cs.jhu.edu/research/machine-learning-ai-and-data-science/
+DEBUG:visited:https://www.cs.jhu.edu/research/robotics-vision-graphics/
+DEBUG:extracted:('https://www.cs.jhu.edu/research/robotics-vision-graphics/', 'PHONE', '410-516-2004')
+DEBUG:visited:https://www.cs.jhu.edu/people/
+DEBUG:visited:https://www.cs.jhu.edu/faculty/
+DEBUG:visited:https://www.cs.jhu.edu/people/cs-affiliates/
+DEBUG:visited:https://www.cs.jhu.edu/people/administrative-staff/
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-8001')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-6259')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-8001')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-7451')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-0455')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-5249')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-6647')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-8577')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-5821')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-8775')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-6281')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-8775')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-8775')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-4117')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-8775')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-4898')
+DEBUG:extracted:('https://www.cs.jhu.edu/people/administrative-staff/', 'PHONE', '410-516-8775')
+DEBUG:visited:https://www.cs.jhu.edu/people/phd-students/
+DEBUG:visited:https://www.cs.jhu.edu/people/cs-external-advisory-board/
+DEBUG:visited:https://www.cs.jhu.edu/news/
+DEBUG:visited:https://www.cs.jhu.edu/cs-newsletter/
+DEBUG:visited:https://www.cs.jhu.edu/events/
+DEBUG:visited:https://www.cs.jhu.edu/department-seminars/
+DEBUG:visited:https://www.cs.jhu.edu/distinguished-lecture-series/
+DEBUG:visited:https://www.cs.jhu.edu/alumni-and-giving/
+DEBUG:visited:https://www.cs.jhu.edu/news/putting-users-at-the-center-of-explainable-ai-development/
+DEBUG:extracted:('https://www.cs.jhu.edu/news/putting-users-at-the-center-of-explainable-ai-development/', 'PHONE', '746-022-0069')
+DEBUG:extracted:('https://www.cs.jhu.edu/news/putting-users-at-the-center-of-explainable-ai-development/', 'PHONE', '746-022-0069')
+DEBUG:visited:https://www.cs.jhu.edu/news/new-apple-security-measures-concern-the-fbi-but-should-reassure-consumers/
+DEBUG:visited:https://www.cs.jhu.edu/news/this-new-interactive-map-lets-you-scroll-though-the-universe/
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/graduate-studies/mse-programs/
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/graduate-studies/ms-in-security-informatics/
+DEBUG:visited:https://www.cs.jhu.edu/academic-programs/graduate-programs/phd-program/
+DEBUG:visited:https://www.cs.jhu.edu/singhal-family-entrepreneurship-award/
+DEBUG:visited:https://www.cs.jhu.edu/news/cs-students-among-2023-pura-award-recipients/
+DEBUG:visited:https://www.cs.jhu.edu/news/?filters[category]=awards-and-honors
+DEBUG:visited:https://www.cs.jhu.edu/news/synthetic-data-for-ai-outperform-real-data-in-robot-assisted-surgery/
+DEBUG:extracted:('https://www.cs.jhu.edu/news/synthetic-data-for-ai-outperform-real-data-in-robot-assisted-surgery/', 'PHONE', '256-023-0062')
+DEBUG:visited:https://www.cs.jhu.edu/news/?filters[category]=research
+DEBUG:visited:https://www.cs.jhu.edu/news/qa-where-is-chatgpt-taking-us-and-do-we-want-to-follow/
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/join_sigdat.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/sigdat_survey_2010.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/sigdat-committee.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/about-sigdat.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/constitution.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/wvlc6.html
+DEBUG:visited:http://www.cs.jhu.edu/~yarowsky/
