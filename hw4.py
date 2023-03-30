@@ -37,7 +37,11 @@ def get_nonlocal_links(url):
     links = get_links(url)
     filtered = []
     for (link, title) in links:
+        # Task 1
+        # if link is a path, urljoin can combine url and link to form a full link, useful for self-reference detection
         p_link = parse.urlparse(parse.urljoin(url, link))
+        # netloc is domain
+        # need to stip trailing '/', this issue came up on piazza
         if not p_link.netloc == p_url.netloc or (p_link.netloc == p_url.netloc and not p_link.path.rstrip('/') == p_url.path.rstrip('/')):
             filtered.append((link, title))
     return filtered
@@ -59,17 +63,24 @@ def crawl(root:str, wanted_content=['text/html; charset=UTF-8'], within_domain=T
 
     cnt = 0
     while not queue.empty():
+        # I added a limit, else the crawler runs forever, feel free to modify/delete
         if cnt == 200:
             break
         cnt+=1
+
         url = queue.get()
+        # Task 2, avoid visited link
         if not url in visited:
             try:
-                # default GET request object, change to HEAD request object, avoids requesting unnecessary things
+                # Task 4
+                # default GET request, change to HEAD request object, avoids requesting unnecessary things
                 req_obj = request.Request(url, method='HEAD')
+                # urlopen accepts request object and string url, here I passed the request object
                 req = request.urlopen(req_obj)
+                # if not desired content type skip iteration
                 if not req.headers['Content-Type'] in wanted_content:
                     continue
+                # this time I passed the string url, this is a GET request, you can read body content
                 req = request.urlopen(url)
                 html = req.read()
 
@@ -79,7 +90,9 @@ def crawl(root:str, wanted_content=['text/html; charset=UTF-8'], within_domain=T
                     extracted.append(ex)
                     extractlog.debug(ex)
 
+                # Task 2, avoid self-reference links using get_nonlocal_links
                 for link, title in get_nonlocal_links(url):
+                    # Task 3, domain check
                     if within_domain and not parse.urlparse(link).netloc == root_domain:
                         continue
                     queue.put(link)
