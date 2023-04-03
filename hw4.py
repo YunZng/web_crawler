@@ -3,6 +3,7 @@ import re
 import sys
 from bs4 import BeautifulSoup
 from queue import Queue
+from queue import PriorityQueue
 from urllib import parse, request
 
 logging.basicConfig(level=logging.DEBUG, filename='output.log', filemode='w')
@@ -23,8 +24,30 @@ def parse_links(root, html):
 
 
 def parse_links_sorted(root, html):
+    '''Parse all links from html, returning a list of (url, relevance) pairs,
+    where relevance is a score indicating the relevance of the link to the root URL'''
     # TODO: implement
-    return []
+
+    soup = BeautifulSoup(html, 'html.parser')
+    links = soup.find_all('a') # Find all anchor tags in the html
+
+    # Calculate a relevance score for each link based on the number of common path segments with the root URL
+    root_path = parse.urlparse(root).path.split('/')
+    link_scores = []
+    for link in links:
+        href = link.get('href')
+        if href:
+            # Parse the link URL and split its path into segments
+            parsed_href = parse.urlparse(href)
+            link_path = parsed_href.path.split('/')
+
+            common_path_segments = sum([1 for i in range(min(len(root_path), len(link_path))) if root_path[i] == link_path[i]])
+            relevance = common_path_segments / max(len(link_path), 1)
+
+            link_scores.append((href, relevance))
+
+    link_scores.sort(key=lambda x: x[1], reverse=True)
+    return link_scores
 
 
 def get_links(url):
@@ -33,6 +56,11 @@ def get_links(url):
 
 
 def get_nonlocal_links(url):
+    '''Get a list of links on the page specificed by the url,
+    but only keep non-local links and non self-references.
+    Return a list of (link, title) pairs, just like get_links()'''
+    # TODO: implement
+
     p_url = parse.urlparse(url)
     links = get_links(url)
     filtered = []
@@ -54,8 +82,10 @@ def crawl(root:str, wanted_content=['text/html; charset=UTF-8'], within_domain=T
     '''
     # TODO: implement
 
-    queue = Queue()
-    queue.put(root)
+    # queue = Queue()
+    # queue.put(root)
+    queue = PriorityQueue()
+    queue.put((0, root))
     root_domain = parse.urlparse(root).netloc
 
     visited = []
@@ -63,12 +93,12 @@ def crawl(root:str, wanted_content=['text/html; charset=UTF-8'], within_domain=T
 
     cnt = 0
     while not queue.empty():
-        # I added a limit, else the crawler runs forever, feel free to modify/delete
         if cnt == 200:
             break
         cnt+=1
-
-        url = queue.get()
+        # url = queue.get()
+        _, url = queue.get()
+        
         # Task 2, avoid visited link
         if not url in visited:
             try:
@@ -91,11 +121,17 @@ def crawl(root:str, wanted_content=['text/html; charset=UTF-8'], within_domain=T
                     extractlog.debug(ex)
 
                 # Task 2, avoid self-reference links using get_nonlocal_links
-                for link, title in get_nonlocal_links(url):
+                nonlocal_links_set = set(link for link, _ in get_nonlocal_links(url))
+
+                # for link, _ in get_nonlocal_links(url):
+                for link, relevance in parse_links_sorted(url, html):
                     # Task 3, domain check
                     if within_domain and not parse.urlparse(link).netloc == root_domain:
                         continue
-                    queue.put(link)
+                    if link not in nonlocal_links_set:
+                        continue
+                        # queue.put(link)
+                    queue.put((relevance, link))
 
             except Exception as e:
                 print(e, url)
@@ -106,11 +142,29 @@ def crawl(root:str, wanted_content=['text/html; charset=UTF-8'], within_domain=T
 def extract_information(address, html):
     '''Extract contact information from html, returning a list of (url, category, content) pairs,
     where category is one of PHONE, ADDRESS, EMAIL'''
-
     # TODO: implement
+
     results = []
+    visited_match = []
+
+    # Extract phone numbers
     for match in re.findall('\d\d\d-\d\d\d-\d\d\d\d', str(html)):
-        results.append((address, 'PHONE', match))
+        if match not in visited_match:
+            results.append((address, 'PHONE', match))
+            visited_match.append(match)
+
+    # Extract email addresses
+    for match in re.findall(r'\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b', str(html)):
+        # if match not in visited_match:
+            results.append((address, 'EMAIL', match))
+            # visited_match.append(match)
+
+    # Extract physical addresses
+    for match in re.findall(r'\b[A-Za-z\s]+\s*,\s*[A-Za-z]+\s*(?:\.\s*)?\d{5}\b', str(html)):
+        if match not in visited_match:
+            results.append((address, 'ADDRESS', match))
+            visited_match.append(match)
+
     return results
 
 
